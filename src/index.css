@@ -13,19 +13,17 @@ code {
 }
 
 .bg-body-dark {
-  /* dark bg */
   background: linear-gradient(106.89deg, #050915 -7.89%, #060b1c 106.45%);
 }
 
 .bg-body-blend {
   background: linear-gradient(45deg, #3796e5 0%, #46ece3 100%),
-    rgba(0, 0, 0, 0.02);
+    rgba(0, 0, 0, 0.02) !important;
   mix-blend-mode: overlay;
-  /* background-blend-mode: overlay; */
-  backdrop-filter: blur(700px);
   width: 100%;
   height: 100%;
-  z-index: -1;
+ z-index: -1;
+  
 }
 
 .text_light {
@@ -97,10 +95,11 @@ code {
     108.66deg,
     rgba(10, 21, 36, 0.3) -47.25%,
     rgba(13, 28, 39, 0.3) 145.76%
-  );
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(80px);
+  ) !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(80px) !important;
   border: 0.5px solid #429ae3 !important;
+  border-radius: 0.5rem !important;
 }
 
 .bg_glow_light {
@@ -111,14 +110,33 @@ code {
 
 .logo_glow {
   position: absolute;
-  
   width: 250px;
   height: 250px;
-
-
-
-  /* light gradient */
-
   background: linear-gradient(45deg, #3796e5 0%, #46ece3 100%);
   filter: blur(230px);
+}
+
+.card_blue_gradient {
+  background: linear-gradient(
+    108.66deg,
+    rgba(255, 255, 255, 0.75) -47.25%,
+    rgba(255, 255, 255, 0.75) 145.76%
+  );
+  mix-blend-mode: overlay;
+  background-blend-mode: overlay;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(200px);
+}
+
+.w-full{
+  width: 100%;
+
+}
+
+.h-full{
+  height: 100%;
+}
+
+.-z-1{
+  z-index: -1;
 }

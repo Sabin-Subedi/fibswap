@@ -1,0 +1,9 @@
+.card_icon_placement{
+    top: -51%;
+    transform: translateY(70%);
+
+}
+
+.help_card_blur{
+    backdrop-filter: blur(500px) !important
+}
