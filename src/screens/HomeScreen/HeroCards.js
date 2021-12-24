@@ -1,7 +1,10 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 function HeroCards() {
+  const isMediumScreen = useMediaQuery("(min-width: 768px)");
+
   return (
     <Row
       className="align-items-center justify-content-center mx-auto gap-0 "
@@ -51,7 +54,7 @@ function HeroCards() {
             <div className="">
               <img
                 src="/img/ethereum.png"
-                style={{ width: "10rem" }}
+                style={{ width: "5rem" }}
                 alt="Ethereum"
                 className="invisible"
               />
@@ -66,7 +69,7 @@ function HeroCards() {
               >
                 <img
                   src="/img/ethereum.png"
-                  style={{ width: "16rem" }}
+                  style={{ width: "10rem" }}
                   alt="Ethereum"
                 />
               </div>

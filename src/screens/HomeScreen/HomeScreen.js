@@ -3,15 +3,18 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { FiChevronDown } from "react-icons/fi";
 import Footer from "../../components/Footer";
 import NavigationBar from "../../components/Navbar";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import InstaIcon from "../../vectors/Icons/InstaIcon";
 import MailIcon from "../../vectors/Icons/MailIcon";
 import TelegramIcon from "../../vectors/Icons/TelegramIcon";
 import LogoShape from "../../vectors/LogoShape";
 import HelpCards from "./HelpCards";
-import HeroCards from "./HeroCards";
 import "./Homescreen.css";
 
 function HomeScreen() {
+  const isMediumScreen = useMediaQuery("(min-width: 768px)");
+
+
   return (
     <div className=" position-relative" style={{ zIndex: 5 }}>
       <div
@@ -23,13 +26,11 @@ function HomeScreen() {
         style={{ zIndex: -1 }}
       />
       <NavigationBar />
-      <Container>
-        <main
-          className="d-flex flex-column justify-content-center"
-          style={{ height: "100vh" }}
-        >
+      <Container fluid={["sm","md"]}>
+        {/* Hero Section */}
+        <main className="d-flex flex-column justify-content-center ">
           <Row className="justify-content-center">
-            <Col xs={8} className="mx-auto d-flex flex-column">
+            <Col xs={12} md={8} className="mx-auto d-flex flex-column mt-3">
               <h1 className="text-center text-white display-5 fw-bolder">
                 Swap your crypto tokens <br /> in{" "}
                 <span className="gradient_light gradient_text">
@@ -41,8 +42,9 @@ function HomeScreen() {
                 swap tokens from one chain to another chain with the click of a
                 button.{" "}
               </p>
-              <div className="position-relative">
-                <HeroCards />
+              <div className="position-relative d-flex">
+                {/* <HeroCards /> */}
+                <img src="/img/hero.svg" className="mx-auto" style={{width: isMediumScreen ? '60%' : '100%'}} alt="Ethereum" />
                 <div
                   className="position-absolute bg_glow_light top-50 left-50 transform-middle"
                   style={{ width: "100%", height: "100%", zIndex: -1 }}
@@ -62,6 +64,7 @@ function HomeScreen() {
           </Row>
         </main>
 
+        {/* About Section  */}
         <section id="about" className="py-5">
           <div className="my-5 pt-5">
             <h2 className="text-center text-white display-6 fw-bolder">
@@ -69,13 +72,13 @@ function HomeScreen() {
               <span className="gradient_light gradient_text">Fibswap</span>?
             </h2>
 
-            <p className="text-center text_light col-5 mx-auto mb-0 fw-light">
+            <p className="text-center text_light col-12 col-md-6 mx-auto mb-0 fw-light">
               FibSwap aims to disrupt the crypto trading world by enabling users
               to swap tokens across multiple chains using something called IMBS.
             </p>
           </div>
-          <Row className="align-items-end">
-            <Col xs={6} className="pe-5">
+          <Row xs={1} md={2} className="align-items-center ">
+            <Col xs={12} md={6} className="pe-lg-5">
               <h3 className="gradient_light gradient_text fw-bolder">
                 We built a DEx that will disrupt crypto trading forever.
               </h3>
@@ -99,7 +102,7 @@ function HomeScreen() {
                 longer term.
               </p>
             </Col>
-            <Col xs={6} className="position-relative">
+            <Col xs={12} md={6} className="position-relative">
               <img src="/img/about.svg" width="100%" alt="" />
               <div
                 className="logo_glow top-40 start-50 translate-middle-x"
@@ -109,13 +112,15 @@ function HomeScreen() {
           </Row>
         </section>
 
+        {/* Features Section  */}
+
         <section className="py-5">
-          <div className="my-5 py-5 ">
+          <div className="my-md-5 py-md-5 ">
             <h2 className="text-center text-white display-6 fw-bolder gradient_light gradient_text">
               How We Help?
             </h2>
 
-            <p className="text-center text_light col-6 mx-auto mb-0 fw-light mb-5">
+            <p className="text-center text_light col-12 col-md-6 mx-auto mb-0 fw-light mb-5">
               FibSwap provides a great value proposition to users of the
               platform and to token holders which should provide the network
               effect needed for mass adoption. One of the main questions we
@@ -126,20 +131,21 @@ function HomeScreen() {
           <HelpCards />
         </section>
 
+      {/* White Paper description */}
         <section className="py-5">
-          <div className="my-5 pt-5  ">
+          <div className="my-md-5 pt-md-5  ">
             <h2 className="text-center text-white display-6 fw-bolder gradient_light gradient_text">
               White Paper
             </h2>
 
-            <p className="text-center text_light col-8 mx-auto mb-0 fw-light mb-5">
+            <p className="text-center text_light col-12 col-md-8 mx-auto mb-0 fw-light mb-5">
               Our whitepaper is a dynamic document. As opposed to a static
               document we are constantly updating the whitepaper with the most
               up to date information.
             </p>
           </div>
 
-          <div className="position-relative mb-5 col-3  mx-auto  bg-transparent d-flex flex-column align-items-center px-4 pb-2">
+          <div className="position-relative mb-5 col-11 col-md-5 col-lg-3  mx-auto  bg-transparent d-flex flex-column align-items-center px-4 pb-2">
             <div className="position-absolute w-full h-full card_blue_gradient -z-1" />
             <div style={{ marginTop: "-3rem" }}>
               <LogoShape height="250" />
@@ -167,7 +173,7 @@ function HomeScreen() {
             </p>
           </div>
 
-          <button className="bg-transparent mt-4 border-0 d-block position-relative col-4 mx-auto">
+          <button className="bg-transparent mt-4 border-0 d-block position-relative col-12 col-md-6 col-lg-4 mx-auto">
             <div
               className="gradient_light  px-4 py-2 rounded"
               style={{ opacity: 0.2 }}
@@ -182,13 +188,15 @@ function HomeScreen() {
           </button>
         </section>
 
-        <section className='py-5'>
-          <div className="my-5 pt-5  ">
+        {/* Privacy section  */}
+
+        <section className="py-5">
+          <div className="my-lg-5 pt-md-5  ">
             <h2 className="text-center text-white display-6 fw-bolder gradient_light gradient_text ">
               Enjoy Your Privacy
             </h2>
 
-            <p className="text-center text_light col-8 mx-auto mb-0 fw-light mb-5">
+            <p className="text-center text_light col-12 col-md-8 mx-auto mb-0 fw-light mb-5">
               As part of FibSwap’s core commitment to providing a secure DEX
               experience for our users, we will continually update and review
               our audit opinions and are in talks with several auditors prior to
@@ -196,7 +204,7 @@ function HomeScreen() {
             </p>
           </div>
           <Row className="align-items-center">
-            <Col xs={6} className="px-5 d-flex">
+            <Col xs={12} md={6} className="px-md-5 mb-5 mb-md-0 d-flex">
               <img
                 src="/img/fingerprint.svg"
                 className="mx-auto"
@@ -204,7 +212,7 @@ function HomeScreen() {
                 alt=""
               />
             </Col>
-            <Col xs={6} className="text_light opacity-75 fs-6">
+            <Col xs={12} md={6} className="text_light opacity-75 fs-6">
               <h2 className="card_border gradient_text fw-bold d-inline-block">
                 Commitment
               </h2>
@@ -223,20 +231,22 @@ function HomeScreen() {
           </Row>
         </section>
 
-        <section className='py-5'>
-          <div className="my-5 pt-5  ">
+        {/* Token Distribution section  */}
+
+        <section className="py-5">
+          <div className="my-md-5 pt-5  ">
             <h2 className="text-center text-white display-6 fw-bolder gradient_light gradient_text ">
               Token Distribution
             </h2>
 
-            <p className="text-center text_light col-8 mx-auto mb-0 fw-light mb-5">
+            <p className="text-center text_light col-12 col-md-8 mx-auto mb-0 fw-light mb-5">
               At FibSwap we want to be as transparent as possible and give you
               all the information on how we have allocated the original 10
               Billion FIBO tokens.
             </p>
           </div>
           <Row className="align-items-center">
-            <Col xs={6} className="text_light opacity-75 fs-6">
+            <Col xs={12} md={6} className="text_light opacity-75 fs-6">
               <h2 className="card_border gradient_text fw-bold d-inline-block">
                 Token Stats
               </h2>
@@ -256,18 +266,19 @@ function HomeScreen() {
                 Current Circulating Supply: 3,674,000,000 (3.674 billion)
               </p>
             </Col>
-            <Col xs={6} className="ps-5 d-flex">
+            <Col xs={12} md={6} className="ps-md-5 d-flex">
               <img
                 src="/img/token_distri.svg"
-                className="ms-auto"
-                width="80%"
+                className="mx-auto ms-md-auto"
+                width="100%"
                 alt=""
               />
             </Col>
           </Row>
         </section>
 
-        <section className='py-5 mb-5'>
+        {/* Contact section  */}
+        <section className="py-5 mb-5">
           <div className="my-5 pt-5  ">
             <h2 className="text-center text-white display-6 fw-bolder gradient_light gradient_text ">
               Contact Us
@@ -278,15 +289,15 @@ function HomeScreen() {
             </p>
           </div>
           <Row className="align-items-center">
-            <Col xs={6} className="ps-5 d-flex">
+            <Col xs={12} md={6} className="ps-md-5 d-flex mb-5 mb-md-0">
               <img
                 src="/img/contact.svg"
-                className="me-auto"
+                className="mx-auto me-md-auto"
                 width="60%"
                 alt=""
               />
             </Col>
-            <Col xs={6} className="text_light opacity-75 fs-6 ps-5">
+            <Col xs={12} md={6} className="text_light opacity-75 fs-6 ps-md-5">
               <h2 className="card_border gradient_text fw-bold d-inline-block">
                 Ask Questions
               </h2>
@@ -304,24 +315,33 @@ function HomeScreen() {
           </Row>
         </section>
 
-        <section className='py-5 mb-5'>
-          <Row>
-            <Col xs={3}>
-              <img src="/img/instacoin.svg" width="70%" alt="" />
+        {/* We are not just blue-black */}
+        <section className="py-5 mb-4 mb-md-5">
+          <Row xs={1} md={3} className="justify-content-center">
+            <Col xs={8} md={3} className="d-flex">
+              <img
+                src="/img/instacoin.svg"
+                width="80%"
+                className="mx-auto"
+                alt=""
+              />
             </Col>
-            <Col>
-              <h2 className="display-5 fw-bolder text-center text-white pb-5">
+            <Col xs={12} md={6} className="my-4 my-md-0">
+              <h2 className="fs-2 display-md-5 fw-bolder text-center text-white pb-4 pb-md-5">
                 We are not just{" "}
                 <span className="gradient_light gradient_text">blue-black</span>
               </h2>
-              <button className="bg-transparent border-0 position-relative r d-block col-10 fw-bold fs-3 rounded mx-auto mt-5 py-2">
-                <div className="position-absolute top-0 w-full h-full rainbow_color opacity-25 rounded left-0 border   -z-1"></div>
+              <button
+                className="bg-transparent position-relative  d-block col-12 col-md-10 fw-bold fs-4 fs-md-3  rainbow_border   rounded mx-auto mt-0 mt-md-5 py-2"
+                style={{ boxSizing: "borderBox" }}
+              >
+                <div className="position-absolute top-0  w-full h-full rainbow_color opacity-25 rounded start-0   -z-1"></div>
                 <span className="rainbow_color gradient_text">
                   See our projects
                 </span>
               </button>
             </Col>
-            <Col xs={3}>
+            <Col xs={8} md={3}>
               <img src="/img/poker_app.svg" width="100%" alt="" />
             </Col>
           </Row>

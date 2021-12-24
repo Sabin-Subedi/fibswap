@@ -16,17 +16,17 @@ function Footer() {
       className="py-5"
     >
       <Container>
-        <Row>
-          <Col>
-            <div className="text-white opacity-75 d-flex gap-4 fs-6 pt-5">
+        <Row xs={1} md={3} className="justify-content-center align-items-center">
+          <Col xs={12} >
+            <div className="text-white opacity-75 d-flex justify-content-center gap-3  gap-sm-4 fs-6 pt-5">
               <p>Projects</p>
               <p>Policy</p>
-              <p>Terms and Condition</p>
+              <p className="">Terms and Condition</p>
             </div>
           </Col>
-          <Col xs={4}>
+          <Col xs={12} md={4}>
             <div className="d-flex flex-column align-items-center">
-              <Logo />
+              <img src="/img/logo.svg" alt="logo" className="w-100" />
               <p className="text-white opacity-75 text-center">
                 Lorem Ipsum Dolor Ist Lorem Ipsum Dolor IstLorem Ipsum Dolor Ist
                 Lorem Ipsum{" "}
@@ -34,7 +34,7 @@ function Footer() {
             </div>
           </Col>
           <Col>
-            <div className="d-flex gap-3 pt-5 justify-content-end">
+            <div className="d-flex gap-3 pt-5 justify-content-center justify-content-md-end">
               <p className="text-white opacity-75">Contact:</p>
               <MailIcon />
               <TelegramIcon />
