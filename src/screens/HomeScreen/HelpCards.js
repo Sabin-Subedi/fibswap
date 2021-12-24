@@ -34,7 +34,7 @@ function HelpCards() {
           <div className="invisible">
             <ClockIcon width={150} height={isMediumScreen ? 90 : 50} />
           </div>
-          <Card.Body className="pt-sm-4 pt-md-4 pt-lg-0 px-md-3 pe-lg-5 ps-lg-4">
+          <Card.Body className="pt-5 pt-sm-4 pt-md-4 pt-lg-0 px-md-3 pe-lg-5 ps-lg-4">
             <h3 className="text-white fw-bold text-center">
               Less Time Consuming
             </h3>
@@ -85,7 +85,7 @@ function HelpCards() {
           <div className="invisible">
             <ClockIcon width={150} height={isMediumScreen ? 120 : 52} />
           </div>
-          <Card.Body className="pt-md-4 pt-lg-0 px-md-3 px-lg-5">
+          <Card.Body className="pt-5 pt-md-4 pt-lg-0 px-md-3 px-lg-5">
             <h3 className="text-white fw-bold text-center">
               Low Transaction Fees
             </h3>
@@ -133,7 +133,7 @@ function HelpCards() {
           <div className="invisible">
             <ClockIcon width={150} height={isMediumScreen ? 90 : 50} />
           </div>
-          <Card.Body className="pt-sm-4 pt-md-0 px-md-3 ps-lg-5 pe-lg-4">
+          <Card.Body className="pt-5 pt-sm-4 pt-md-0 px-md-3 ps-lg-5 pe-lg-4">
             <h3 className="text-white fw-bold text-center">Trust in CEX</h3>
             <p className="text-center text_light mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl
